@@ -21,7 +21,10 @@ namespace GyApp2._0
         {
             AdattaProporzioni();
         }
+
         // !!! METODI CUSTOM !!!
+
+        // Metodi Scale-AutoSize
         private void AdattaProporzioni()
         {
             
