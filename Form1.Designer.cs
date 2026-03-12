@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            picLike = new PictureBox();
+            picDislike = new PictureBox();
+            picProfilo = new PictureBox();
+            lblNomeCompleto = new Label();
+            lblRuolo = new Label();
+            txtDettagli = new TextBox();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picLike).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picDislike).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picProfilo).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -43,57 +46,100 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(pictureBox2, 1, 0);
+            tableLayoutPanel1.Controls.Add(picLike, 0, 0);
+            tableLayoutPanel1.Controls.Add(picDislike, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 1567);
+            tableLayoutPanel1.Location = new Point(0, 1807);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1058, 297);
+            tableLayoutPanel1.Size = new Size(1270, 317);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // picLike
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.accept;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(523, 291);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picLike.Dock = DockStyle.Fill;
+            picLike.Image = Properties.Resources.accept;
+            picLike.Location = new Point(4, 4);
+            picLike.Margin = new Padding(4);
+            picLike.Name = "picLike";
+            picLike.Size = new Size(627, 309);
+            picLike.SizeMode = PictureBoxSizeMode.Zoom;
+            picLike.TabIndex = 0;
+            picLike.TabStop = false;
+            picLike.Click += picLike_Click;
             // 
-            // pictureBox2
+            // picDislike
             // 
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = Properties.Resources.delete;
-            pictureBox2.Location = new Point(532, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(523, 291);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            picDislike.Dock = DockStyle.Fill;
+            picDislike.Image = Properties.Resources.delete;
+            picDislike.Location = new Point(639, 4);
+            picDislike.Margin = new Padding(4);
+            picDislike.Name = "picDislike";
+            picDislike.Size = new Size(627, 309);
+            picDislike.SizeMode = PictureBoxSizeMode.Zoom;
+            picDislike.TabIndex = 1;
+            picDislike.TabStop = false;
+            picDislike.Click += picDislike_Click;
             // 
-            // pictureBox3
+            // picProfilo
             // 
-            pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Image = Properties.Resources.pierpaolo_dovati;
-            pictureBox3.Location = new Point(0, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1058, 1567);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 1;
-            pictureBox3.TabStop = false;
+            picProfilo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            picProfilo.Location = new Point(0, 0);
+            picProfilo.Margin = new Padding(4);
+            picProfilo.Name = "picProfilo";
+            picProfilo.Size = new Size(1270, 1807);
+            picProfilo.SizeMode = PictureBoxSizeMode.Zoom;
+            picProfilo.TabIndex = 1;
+            picProfilo.TabStop = false;
+            // 
+            // lblNomeCompleto
+            // 
+            lblNomeCompleto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblNomeCompleto.AutoSize = true;
+            lblNomeCompleto.Font = new Font("Segoe UI Black", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNomeCompleto.ForeColor = Color.White;
+            lblNomeCompleto.Location = new Point(47, 1245);
+            lblNomeCompleto.Name = "lblNomeCompleto";
+            lblNomeCompleto.Size = new Size(413, 149);
+            lblNomeCompleto.TabIndex = 2;
+            lblNomeCompleto.Text = "NOME";
+            // 
+            // lblRuolo
+            // 
+            lblRuolo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblRuolo.AutoSize = true;
+            lblRuolo.Font = new Font("Segoe UI", 15.8571434F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblRuolo.ForeColor = Color.White;
+            lblRuolo.Location = new Point(75, 1394);
+            lblRuolo.Name = "lblRuolo";
+            lblRuolo.Size = new Size(148, 50);
+            lblRuolo.TabIndex = 3;
+            lblRuolo.Text = "RUOLO";
+            // 
+            // txtDettagli
+            // 
+            txtDettagli.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtDettagli.Location = new Point(75, 1447);
+            txtDettagli.Multiline = true;
+            txtDettagli.Name = "txtDettagli";
+            txtDettagli.ReadOnly = true;
+            txtDettagli.Size = new Size(672, 285);
+            txtDettagli.TabIndex = 4;
             // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1058, 1864);
-            Controls.Add(pictureBox3);
+            ClientSize = new Size(1270, 2124);
+            Controls.Add(txtDettagli);
+            Controls.Add(lblRuolo);
+            Controls.Add(lblNomeCompleto);
+            Controls.Add(picProfilo);
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(4);
             MaximizeBox = false;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -101,17 +147,21 @@
             Load += frmMain_Load;
             Resize += frmMain_Resize;
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picLike).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picDislike).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picProfilo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox picLike;
+        private PictureBox picDislike;
+        private PictureBox picProfilo;
+        private Label lblNomeCompleto;
+        private Label lblRuolo;
+        private TextBox txtDettagli;
     }
 }
